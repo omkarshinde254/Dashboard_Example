@@ -1,5 +1,62 @@
 import './App.css';
 import logo from './assets/Group_185.png'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+export const options = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      position: 'bottom',
+      align: 'start',
+    },
+    title: {
+      display: false,
+    },
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+    },
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+  },
+};
+
+// const labels = ['Connections', 'Messages', 'Campaigns'];
+const labels = ['Conn', 'Mes', 'Cam'];
+
+export const data = {
+  labels,
+  datasets: [
+    {
+      label: labels,
+      data: [425, 295, 750],
+      backgroundColor: ['#C2ECC1', '#1F1F1F', '#C5C7F6'],
+    },
+  ],
+};
 
 function App() {
   return (
@@ -67,27 +124,68 @@ function App() {
           </div>
 
         </div>
-
-        {/* <div className="flex flex-row justify-center mt-10 space-x-2">
-          <img src={logo} alt="logo" />
-          <div className="text-xl text-[#F8F8F8] font-sulphur font-medium tracking-widest pt-2">Realply</div>
-        </div>
-
-        <div class="flex flex-col text-[#F8F8F8]">
-          <div class="flex items-center justify-center h-16">
-            <span class="text-xl font-bold">My App</span>
-          </div>
-          <nav class="flex items-center flex-col justify-between text-base">
-            <a href="#" class="py-4 px-6">Dashboard</a>
-            <a href="#" class="py-4 px-6">Profile</a>
-            <a href="#" class="py-4 px-6">Settings</a>
-            <a href="#" class="py-4 px-6">Logout</a>
-          </nav>
-        </div> */}
       </div>
 
       {/* Container 2 */}
-      <div className="col-span-4 bg-[#F8F8F8]"></div>
+      <div className="col-span-4 bg-[#F8F8F8]">
+        <div className='grid grid-rows-auto'>
+          <div className='text-rose-500'>
+            <div className="flex flex-row justify-start pl-20 mt-5 space-x-2">
+              <div className="text-xl text-[#131313] font-sulphur font-bold tracking-widest pt-2">Dashboard</div>
+            </div>
+          </div>
+
+          <div className='mt-16 pl-20 pb-4 justify-start'>
+            <div className='grid grid-rows-2'>
+              <div className='text-[#94979A] text-lg font-medium font-sulphur'>Connections</div>
+              <div className='text-rose-500 -mt-1'>
+                <div className='grid grid-cols-2'>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>2632</div>
+                  <div>
+                    <img src={require('./assets/Frame 15.png')} alt="percentframe" className="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-300 ml-16 mr-32"></div>
+
+          <div className='mt-2 pl-20 pb-4 justify-start'>
+            <div className='grid grid-rows-2'>
+              <div className='text-[#94979A] text-lg font-medium font-sulphur'>Followers</div>
+              <div className='text-rose-500 -mt-1'>
+                <div className='grid grid-cols-2'>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>2667</div>
+                  <div>
+                    <img src={require('./assets/Frame_15_1.png')} alt="percentframe" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-b border-gray-300 ml-16 mr-32"></div>
+
+
+          <div className='mt-2 pl-20 pb-4 justify-start'>
+            <div className='grid grid-rows-2'>
+              <div className='text-[#94979A] text-lg font-medium font-sulphur'>Connects Invites</div>
+              <div className='text-rose-500 -mt-1'>
+                <div className='grid grid-cols-2'>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>100</div>
+                  <div>
+                    <img src={require('./assets/Frame_15_2.png')} alt="percentframe" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div className='mt-4 ml-20 mr-32 h-64'>
+            <Bar options={options} data={data} />
+          </div>
+        </div>
+      </div>
 
       {/* Container 3 */}
       <div className="col-span-6"></div>
