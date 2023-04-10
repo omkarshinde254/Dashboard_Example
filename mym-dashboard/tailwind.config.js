@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      'sulphur': ['"Sulphur Point"', 'sans-serif']
+    }
   },
   plugins: [],
 }
