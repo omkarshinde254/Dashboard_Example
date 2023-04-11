@@ -1,24 +1,16 @@
 import './App.css';
 import logo from './assets/Group_185.png'
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend, RadialLinearScale, PointElement, LineElement, Filler, } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
+import { Radar } from 'react-chartjs-2';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement,
+  RadialLinearScale,
+  PointElement,
+  LineElement,
+  Filler,
+  Title, Tooltip, Legend);
 
 export const options = {
   responsive: true,
@@ -44,6 +36,14 @@ export const options = {
   },
 };
 
+export const options_doughnut = {
+  responsive: true,
+}
+
+export const options_radar = {
+  responsive: true,
+  showLines: true,
+}
 // const labels = ['Connections', 'Messages', 'Campaigns'];
 const labels = ['Conn', 'Mes', 'Cam'];
 
@@ -54,6 +54,34 @@ export const data = {
       label: labels,
       data: [425, 295, 750],
       backgroundColor: ['#C2ECC1', '#1F1F1F', '#C5C7F6'],
+    },
+  ],
+};
+
+export const data_doughnut = {
+  labels: ['Invititions Sent', 'Pending Invitations', 'Profile views'],
+  datasets: [
+    {
+      data: [33, 33, 33],
+      backgroundColor: ['#1F1F1F', '#C2ECC1', '#C5C7F6'],
+    },
+  ],
+};
+
+
+export const data_radar = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      data: [40, 70, 60, 40, 10, 80, 62],
+      backgroundColor: 'rgba(197, 199, 246, 0.5)',
+      borderWidth: 1,
+      opacity: 0.5,
+    },
+    {
+      data: [70, 20, 40, 10, 60, 50, 50],
+      backgroundColor: 'rgba(194, 236, 193, 0.5)',
+      borderWidth: 1,
     },
   ],
 };
@@ -188,7 +216,71 @@ function App() {
       </div>
 
       {/* Container 3 */}
-      <div className="col-span-6"></div>
+      <div className="col-span-6">
+        <div className='grid grid-rows-auto'>
+          <div className='mt-5 ml-10'>
+            <div className='grid grid-cols-2'>
+              <div className='flex flex-row justify-start'>
+                <input
+                  class="bg-[#F8F8F8] border rounded-lg text-gray-700 w-64 py-1 px-2 leading-tight focus:outline-none"
+                  type="text" placeholder="Search" aria-label="Search"></input>
+                <img src={require('./assets/search.png')} alt="search" className='h-5 w-5 mt-2 ml-56 absolute' />
+              </div>
+              <div className=''>
+                <div className='flex flex-row space-x-5 justify-end pr-10'>
+                  <img src={require('./assets/bell.png')} alt="bell" className='h-8 w-8 mt-1' />
+                  <img src={require('./assets/profile.png')} alt="profile" className='h-8 w-8 mt-1' />
+                  <div className='text-[#131313] text-lg font-semibold font-sulphur tracking-normal mt-2'>Jacob Frost</div>
+                  <img src={require('./assets/arrow-square-down.png')} alt="arrowdown" className='h-5 w-5 mt-3' />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Part-3 Container 2 */}
+          <div className='mt-14 ml-16'>
+            <div className='grid grid-row-2'>
+              <div className=''>
+                <div className='grid grid-cols-2'>
+                  <div className=''>
+                    <div className='text-[#131313] text-xl font-semibold font-sulphur tracking-normal'>Campaign Analytics</div>
+                  </div>
+                  <div className=''>
+                    <img src={require('./assets/Frame_18.png')} alt="Date Picker" className='ml-32' />
+                  </div>
+                </div>
+              </div>
+
+              <div className='flex flex-row space-x-24 mt-4'>
+                <div className='flex flex-col'>
+                  <div className='text-[#94979A] text-lg font-medium font-sulphur tracking-normal'>Invitations sent</div>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>286</div>
+                </div>
+                <div>
+                  <div className='text-[#94979A] text-lg font-medium font-sulphur tracking-normal'>Pending Invitations</div>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>12</div>
+
+                </div>
+                <div>
+                  <div className='text-[#94979A] text-lg font-medium font-sulphur tracking-normal'>Profile views</div>
+                  <div className='text-[#131313] text-3xl font-medium font-rubik tracking-normal'>2891</div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='mt-8 justify-evenly flex flex-row space-x-8 border border-rose-500'>
+            <div className='border border-rose-500'>
+              <Doughnut data={data_doughnut} options={options_doughnut} />
+            </div>
+            <div className='border border-rose-500'>
+              <Radar data={data_radar} options={options_radar} />;
+            </div>
+          </div>
+          <div className='text-rose-500 border border-rose-500'>04</div>
+        </div>
+      </div>
     </div>
 
   );
