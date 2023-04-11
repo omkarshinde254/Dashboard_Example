@@ -7,7 +7,9 @@ module.exports = {
     extend: {},
     fontFamily: {
       'sulphur': ['"Sulphur Point"', 'sans-serif'],
-      'rubik': ['"Rubik"', 'sans-serif']
+      'rubik': ['"Rubik"', 'sans-serif'],
+      'roboto': ['"Roboto"', 'sans-serif'],
+
     }
   },
   plugins: [],
