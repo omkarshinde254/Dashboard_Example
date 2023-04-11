@@ -146,9 +146,10 @@ function App() {
             </div>
           </div>
           <div className='text-[#F8F8F8] pt-10'>
+            <img src={require('./assets/Rectangle_157.png')} alt='scroll' className='absolute' />
             <div className="flex flex-row justify-start space-x-2 pl-16 pb-4">
               <img src={require('./assets/dashboard_action.png')} alt="dashboard" className='h-4 w-4 mt-1' />
-              <div className="text-base text-[#F8F8F8] font-sulphur font-normal tracking-widest cursor-pointer">Dashboard</div>
+              <div className="text-base text-[#D4D4FC] font-sulphur font-normal tracking-widest cursor-pointer">Dashboard</div>
             </div>
 
             <div className="flex flex-row justify-start space-x-2 pl-16 pb-4">
@@ -207,11 +208,11 @@ function App() {
         <div className='grid grid-rows-auto'>
           <div className='text-rose-500'>
             <div className="flex flex-row justify-start pl-20 mt-5 space-x-2">
-              <div className="text-xl text-[#131313] font-sulphur font-bold tracking-widest pt-2">Dashboard</div>
+              <div className="text-2xl text-[#131313] font-sulphur font-semibold tracking-widest pt-2">Dashboard</div>
             </div>
           </div>
 
-          <div className='mt-16 pl-20 pb-4 justify-start'>
+          <div className='mt-14 pl-20 pb-4 justify-start'>
             <div className='grid grid-rows-2'>
               <div className='text-[#94979A] text-lg font-medium font-sulphur'>Connections</div>
               <div className='text-rose-500 -mt-1'>
@@ -335,6 +336,7 @@ function App() {
                 <img src={require('./assets/Frame_24hr.png')} alt="Date Picker" className='cursor-pointer' />
               </div>
             </div>
+            <img src={require('./assets/Scrollbar.png')} alt="Scrollbar" className='absolute h-28 right-0.5 bottom-1' />
             <div className='flex flex-row space-x-4'>
               <img src={require('./assets/Ellipse 5.png')} alt="Ellipse" />
               <div className='mt-1 text-[#131313] text-base font-normal font-sulphur tracking-normal'><span className="font-semibold">Alex Morgan</span> sent you a <span className='font-semibold'> connection request</span>.</div>
