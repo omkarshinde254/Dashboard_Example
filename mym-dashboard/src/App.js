@@ -142,7 +142,7 @@ function App() {
         <div className='grid grid-rows-auto'>
           <div className='text-[#F8F8F8]'>
             <div className="flex flex-row justify-center mt-5 space-x-2">
-              <img src={logo} alt="logo" className='h-7 w-8 mt-2' /> <div className="cursor-pointer text-xl text-[#F8F8F8] font-sulphur font-medium tracking-widest pt-2">Realply</div>
+              <img src={logo} alt="logo" className='h-7 w-8 mt-2 -ml-4' /> <div className="cursor-pointer text-xl text-[#F8F8F8] font-sulphur font-medium tracking-widest pt-2">Realply</div>
             </div>
           </div>
           <div className='text-[#F8F8F8] pt-10'>
