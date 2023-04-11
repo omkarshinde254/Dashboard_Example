@@ -238,7 +238,7 @@ function App() {
           </div>
 
           {/* Part-3 Container 2 */}
-          <div className='mt-14 ml-16'>
+          <div className='mt-12 ml-16'>
             <div className='grid grid-row-2'>
               <div className=''>
                 <div className='grid grid-cols-2'>
@@ -270,15 +270,44 @@ function App() {
             </div>
           </div>
 
-          <div className='mt-8 justify-evenly flex flex-row space-x-8 border border-rose-500'>
-            <div className='border border-rose-500'>
+          <div className='mt-6 justify-evenly flex flex-row space-x-8'>
+            <div className=''>
               <Doughnut data={data_doughnut} options={options_doughnut} />
             </div>
-            <div className='border border-rose-500'>
-              <Radar data={data_radar} options={options_radar} />;
+            <div className=''>
+              <Radar data={data_radar} options={options_radar} />
             </div>
           </div>
-          <div className='text-rose-500 border border-rose-500'>04</div>
+
+          {/* Part3 => Container -4  */}
+          <div className='flex flex-col ml-16 mt-4'>
+            <div className='flex flex-row justify-between'>
+              <div className='text-[#131313] text-xl font-semibold font-sulphur tracking-normal'>Recent Activity</div>
+              <div className='mr-10'>
+                <img src={require('./assets/Frame_24hr.png')} alt="Date Picker" />
+              </div>
+            </div>
+            <div className='flex flex-row space-x-4'>
+              <img src={require('./assets/Ellipse 5.png')} alt="Ellipse" />
+              <div className='mt-1 text-[#131313] text-base font-normal font-sulphur tracking-normal'><span className="font-semibold">Alex Morgan</span> sent you a <span className='font-semibold'> connection request</span>.</div>
+            </div>
+            <div class="border-b-2 border-gray-300 -ml-2 mr-4 pt-1"></div>
+
+            <div className='flex flex-row space-x-4 pt-1'>
+              <img src={require('./assets/Ellipse 6.png')} alt="Ellipse" />
+              <div className='mt-1 text-[#131313] text-base font-normal font-sulphur tracking-normal'><span className="font-semibold">Mujo Prosper</span> sent you a <span className='font-semibold'> connection request</span>.</div>
+            </div>
+            <div class="border-b-2 border-gray-300 -ml-2 mr-4 pt-1"></div>
+
+            <div className=''>
+              <div className='flex flex-row space-x-4 pt-1'>
+                <img src={require('./assets/e17.png')} alt="Ellipse" className='h-8 w-8'/>
+                <div className='mt-1 text-[#131313] text-base font-normal font-sulphur tracking-normal'>
+                  Upcoming Task - <span className='font-semibold'>Create a campaign for designers </span>due on <span className='font-semibold'>02/04/2023.</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
